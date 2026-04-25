@@ -16,25 +16,24 @@ export default function HomeScreen() {
       headerImage={<></>}
     >
       {/* Titulo principal */}
-      <ThemedView style={styles.titleContainer}>
+      <ThemedView style={stylesPageIndex.titleContainer}>
         <ThemedText type="title">Procura Jurídica</ThemedText>
       </ThemedView>
 
-      <ThemedView style={styles.containerPrincipal}>
+      <ThemedView style={stylesPageIndex.containerPrincipal}>
         {/* Campo de busca */}
-        <ThemedView style={styles.searchRow}>
+        <ThemedView style={stylesPageIndex.searchRow}>
           <TextInput
             placeholder="Pesquisar..."
             value={search}
             onChangeText={setSearch}
-            style={styles.input}
+            style={stylesPageIndex.input}
           />
 
           {/* Button para buscar */}
           <TouchableOpacity
-            style={styles.buttonCounter}
-            onPress={() => alert('XXXXXXX')}>
-            <Text style={styles.button}>Buscar</Text>
+            style={stylesPageIndex.buttonCounter}>
+            <Text style={stylesPageIndex.button}>Buscar</Text>
           </TouchableOpacity>
 
         </ThemedView>
@@ -44,7 +43,7 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create({
+const stylesPageIndex = StyleSheet.create({
 
   containerPrincipal: {
     flex: 1,
@@ -60,7 +59,7 @@ const styles = StyleSheet.create({
 
   button: {
     backgroundColor: '#1E1E1E',
-    color: '#fff',
+    color: '#f8f8f8',
     paddingVertical: 10,
     paddingHorizontal: 20,
     borderRadius: 6,

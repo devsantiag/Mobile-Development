@@ -1,14 +1,7 @@
-import { Image } from 'expo-image';
-import { Platform, StyleSheet } from 'react-native';
-
-import { Collapsible } from '@/components/ui/collapsible';
-import { ExternalLink } from '@/components/external-link';
+import { StyleSheet } from 'react-native';
 import ParallaxScrollView from '@/components/parallax-scroll-view';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Fonts } from '@/constants/theme';
-import { Text } from 'react-native';
 
 export default function TabTwoScreen() {
   return (
@@ -16,14 +9,12 @@ export default function TabTwoScreen() {
       headerBackgroundColor={{ light: '', dark: '' }}
       headerImage={<></>}>
       <ThemedView style={styles.titleContainer}>
-        <ThemedText type="title">lorem</ThemedText>
+        <ThemedText type="title">Histórico de pesquisa</ThemedText>
       </ThemedView>
 
       <ThemedText>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit auctor dui, a efficitur nisl. Donec in nunc sed enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis. Donec eget ligula a enim efficitur convallis.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nostrum optio amet cumque iste ipsam unde accusantium quia, distinctio, ipsa veniam officiis. Ipsum unde odio quo! Quae unde molestias totam eius?
       </ThemedText>
-
-
 
     </ParallaxScrollView>
   );
