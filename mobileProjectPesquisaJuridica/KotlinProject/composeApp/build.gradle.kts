@@ -74,5 +74,6 @@ android {
 
 dependencies {
     debugImplementation(libs.compose.uiTooling)
+    implementation("androidx.navigation:navigation-compose:2.7.7")
 }
 
