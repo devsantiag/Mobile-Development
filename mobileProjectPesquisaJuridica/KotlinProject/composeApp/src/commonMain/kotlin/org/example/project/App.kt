@@ -36,10 +36,8 @@ fun App() {
             navController = navController,
             startDestination = "Login"
         ) {
-
             composable("Login") {
                 LoginScreen(
-
                     onNavigateToHome = {
                         navController.navigate("home")
                     },
@@ -52,30 +50,22 @@ fun App() {
 
             composable("home") {
                 HomeScreen (
-
                     onLogout = {
                         navController.navigate("home")
                     }
-
                 )
             }
 
             composable("forgot_password") {
-
                 ForgotPasswordScreen(
-
                     onNavigateBack = {
                         navController.popBackStack()
                     },
-
                     onSendResetLink = { email ->
                         println("Reset link enviado para: $email")
                     }
                 )
             }
-
-
-
         }
     }
 }
@@ -173,9 +163,7 @@ fun LoginFormUser(
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password),
         singleLine = true
     )
-
     Spacer(modifier = Modifier.height(5.dp))
-
 }
 
 // Button/Link for to password recover
