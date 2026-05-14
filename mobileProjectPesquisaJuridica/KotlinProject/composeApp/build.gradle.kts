@@ -13,7 +13,7 @@ kotlin {
             jvmTarget.set(JvmTarget.JVM_11)
         }
     }
-    
+
     listOf(
         iosArm64(),
         iosSimulatorArm64()
@@ -23,7 +23,7 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     sourceSets {
         androidMain.dependencies {
             implementation(libs.compose.uiToolingPreview)
@@ -36,8 +36,14 @@ kotlin {
             implementation(libs.compose.ui)
             implementation(libs.compose.components.resources)
             implementation(libs.compose.uiToolingPreview)
+
+            // Lifecycle (Essenciais para a Navigation funcionar no KMP)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            // Navigation Multiplatform (Apenas esta é necessária)
+            implementation("org.jetbrains.androidx.navigation:navigation-compose:2.9.0-beta03")
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -74,6 +80,4 @@ android {
 
 dependencies {
     debugImplementation(libs.compose.uiTooling)
-    implementation("androidx.navigation:navigation-compose:2.7.7")
 }
-

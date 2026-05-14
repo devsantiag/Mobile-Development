@@ -1,5 +1,7 @@
 package org.example.project
 
+//okpackage org.example.project
+
 import android.os.Build
 
 class AndroidPlatform : Platform {
