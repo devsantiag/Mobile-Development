@@ -7,6 +7,7 @@ object LoginService {
         password: String
     ): Boolean {
 
+//        Fake information -- thie content has been not using
         return email == "admin@gmail.com"
                 && password == "123456"
     }

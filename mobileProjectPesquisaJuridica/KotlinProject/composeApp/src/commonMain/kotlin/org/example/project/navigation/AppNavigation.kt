@@ -7,38 +7,51 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import org.example.project.screens.*
+import org.example.project.screens.home.HomeScreen
+import org.example.project.screens.recoverPassword.ForgotPasswordScreen
+import org.example.project.screens.registerAccount.UserRegister
 
 @Composable
 fun AppNavigation() {
-
     val navController = rememberNavController()
-
     val mainThemeColors = darkColorScheme(
         background = Color(0xFF000000),
         onBackground = Color.White
     )
-
     MaterialTheme(
         colorScheme = mainThemeColors
     ) {
         NavHost(
             navController = navController,
-            startDestination = Screen.Login.route
+            startDestination = ScreenNavgation.Login.route
         ) {
 
-            composable(Screen.Login.route) {
+            composable(ScreenNavgation.Login.route) {
                 LoginScreen(
                     onNavigateToHome = {
-                        navController.navigate(Screen.Login.route)
+                        navController.navigate(ScreenNavgation.Login.route)
                     },
                 )
             }
 
-            composable(Screen.Home.route) {
+            composable(ScreenNavgation.Home.route) {
                 HomeScreen(
                     onLogout = {
-                        navController.navigate(Screen.Home.route)
+                        navController.navigate(ScreenNavgation.Home.route)
                     }
+                )
+            }
+
+            composable(ScreenNavgation.Register.route) {
+                UserRegister()
+            }
+
+            composable(ScreenNavgation.ForgotPassword.route) {
+                ForgotPasswordScreen(
+                    onNavigateBack = {
+                        navController.popBackStack()
+                    },
+                    onSendResetLink = { email -> }
                 )
             }
         }

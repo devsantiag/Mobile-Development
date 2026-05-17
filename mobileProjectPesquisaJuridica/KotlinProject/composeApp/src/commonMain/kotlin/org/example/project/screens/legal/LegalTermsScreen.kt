@@ -1,6 +1,5 @@
-package org.example.project.components
+package org.example.project.screens.legal
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 
 @Composable

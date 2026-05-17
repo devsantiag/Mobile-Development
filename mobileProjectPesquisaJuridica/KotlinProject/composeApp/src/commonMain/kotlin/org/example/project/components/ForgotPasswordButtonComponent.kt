@@ -12,13 +12,11 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
 // The principal Button for create actions
 @Composable
 fun ForgotPasswordButton(
     onClick: () -> Unit = {}
 ) {
-
     Text(
         text = "Forgot Password?",
         color = Color.White,
@@ -36,7 +34,7 @@ fun ForgotPasswordButton(
     )
 }
 
-// Page interface
+// Page interface -- Title introduction
 @Composable
 fun AccountRecoveryForm() {
     Column(
@@ -47,7 +45,6 @@ fun AccountRecoveryForm() {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-
         Text(
             text = "Account Recovery",
             color = Color.White,
@@ -64,3 +61,10 @@ fun AccountRecoveryForm() {
     }
 }
 
+@Composable
+fun RecoveryContent(
+    email: String,
+    onEmailChange: (String) -> Unit,
+    onSendRecovery: () -> Unit
+) {
+}

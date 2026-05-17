@@ -1,6 +1,5 @@
-package org.example.project.screens
+package org.example.project.screens.recoverPassword
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 
@@ -9,17 +8,13 @@ fun ForgotPasswordScreen(
     onNavigateBack: () -> Unit,
     onSendResetLink: (String) -> Unit
 ) {
-
-
 }
 
 @Preview(showBackground = true)
 @Composable
 fun ForgotPasswordScreenPreview() {
-
     ForgotPasswordScreen(
         onNavigateBack = {},
         onSendResetLink = {}
     )
-
 }

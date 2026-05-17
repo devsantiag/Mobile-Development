@@ -1,4 +1,4 @@
-package org.example.project.screens
+package org.example.project.screens.home
 
 import androidx.compose.runtime.Composable
 
