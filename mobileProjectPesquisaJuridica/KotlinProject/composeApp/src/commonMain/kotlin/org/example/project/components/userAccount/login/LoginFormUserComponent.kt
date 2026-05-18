@@ -1,4 +1,4 @@
-package org.example.project.components
+package org.example.project.components.userAccount.login
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.KeyboardOptions
@@ -39,7 +39,5 @@ fun LoginFormUser(
         ),
         singleLine = true
     )
-
     Spacer(modifier = Modifier.height(5.dp))
-
 }
