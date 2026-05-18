@@ -25,23 +25,26 @@ fun AppNavigation() {
             navController = navController,
             startDestination = ScreenNavgation.Login.route
         ) {
-
             composable(ScreenNavgation.Login.route) {
                 LoginScreen(
                     onNavigateToHome = {
-                        navController.navigate(ScreenNavgation.Login.route)
+                        navController.navigate(ScreenNavgation.Home.route)
                     },
+                    onNavigateToForgotPassword = {
+                        navController.navigate(ScreenNavgation.ForgotPassword.route)
+                    }
                 )
             }
 
             composable(ScreenNavgation.Home.route) {
                 HomeScreen(
                     onLogout = {
-                        navController.navigate(ScreenNavgation.Home.route)
+                        navController.navigate(ScreenNavgation.Login.route)
                     }
                 )
             }
 
+//            Parameter currently disabled
             composable(ScreenNavgation.Register.route) {
                 UserRegister()
             }
@@ -51,7 +54,7 @@ fun AppNavigation() {
                     onNavigateBack = {
                         navController.popBackStack()
                     },
-                    onSendResetLink = { email -> }
+                    onSendResetLink = { email: String -> }
                 )
             }
         }
