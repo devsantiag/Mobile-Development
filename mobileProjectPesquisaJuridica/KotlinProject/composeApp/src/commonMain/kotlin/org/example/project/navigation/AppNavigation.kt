@@ -21,17 +21,24 @@ fun AppNavigation() {
     MaterialTheme(
         colorScheme = mainThemeColors
     ) {
+//        Route identification
         NavHost(
             navController = navController,
             startDestination = ScreenNavgation.Login.route
         ) {
             composable(ScreenNavgation.Login.route) {
+
                 LoginScreen(
                     onNavigateToHome = {
                         navController.navigate(ScreenNavgation.Home.route)
                     },
+
                     onNavigateToForgotPassword = {
                         navController.navigate(ScreenNavgation.ForgotPassword.route)
+                    },
+
+                    onOpenInterfaceRegisterNewUser = {
+                        navController.navigate(ScreenNavgation.Register.route)
                     }
                 )
             }
