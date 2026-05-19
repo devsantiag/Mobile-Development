@@ -33,7 +33,7 @@ fun AccountRecoveryHeader() {
 }
 
 // Form Recover Account
-@Composable
+@Composable  
 fun RecoveryContent(
     email: String,
     onEmailChange: (String) -> Unit,
