@@ -1,4 +1,4 @@
-package org.example.project.components.userAccount.login.accountRecover
+package org.example.project.components.userAccount.forgotPassword
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*

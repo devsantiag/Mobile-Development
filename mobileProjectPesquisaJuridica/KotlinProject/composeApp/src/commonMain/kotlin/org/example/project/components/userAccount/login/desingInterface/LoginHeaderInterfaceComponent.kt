@@ -1,4 +1,4 @@
-package org.example.project.components.userAccount.login.desing
+package org.example.project.components.userAccount.login.desingInterface
 
 import androidx.compose.runtime.Composable
 

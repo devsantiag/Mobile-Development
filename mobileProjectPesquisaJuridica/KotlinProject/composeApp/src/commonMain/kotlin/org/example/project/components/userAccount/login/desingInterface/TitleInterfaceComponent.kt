@@ -1,4 +1,4 @@
-package org.example.project.components.userAccount.login.desing
+package org.example.project.components.userAccount.login.desingInterface
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,6 +19,8 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+
+// Header
 @Composable
 fun TitleInterface() {
     Column(
