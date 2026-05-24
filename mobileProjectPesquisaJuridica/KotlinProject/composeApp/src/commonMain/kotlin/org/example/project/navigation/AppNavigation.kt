@@ -9,7 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import org.example.project.screens.*
 import org.example.project.screens.home.HomeScreen
 import org.example.project.screens.recoverPassword.ForgotPasswordScreen
-import org.example.project.screens.registerAccount.UserRegister
+import org.example.project.screens.registerAccount.UserRegisterFormsScreen
 
 @Composable
 fun AppNavigation() {
@@ -53,7 +53,7 @@ fun AppNavigation() {
 
 //            Parameter currently disabled
             composable(ScreenNavgation.Register.route) {
-                UserRegister()
+                UserRegisterFormsScreen()
             }
 
             composable(ScreenNavgation.ForgotPassword.route) {
