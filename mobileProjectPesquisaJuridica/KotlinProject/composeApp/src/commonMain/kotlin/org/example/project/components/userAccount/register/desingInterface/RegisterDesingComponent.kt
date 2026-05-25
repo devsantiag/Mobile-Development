@@ -12,41 +12,24 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 
 // Responsible component for showing the user interface structure to register a new account
+
 @Composable
 fun UserInterfaceRegisterAccount(
     header: @Composable () -> Unit,
     formFields: @Composable () -> Unit,
     actionButtons: @Composable () -> Unit,
-    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
-            .padding(24.dp),
-        verticalArrangement = Arrangement.spacedBy(24.dp),
+            .padding(20.dp),
+        verticalArrangement = Arrangement.SpaceBetween,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Box(
-            modifier = Modifier.fillMaxWidth(),
-            contentAlignment = Alignment.CenterStart
-        ) {
-            header()
-        }
+        header()
 
-        Column(
-            modifier = Modifier
-                .fillMaxWidth()
-                .weight(1f),
-            verticalArrangement = Arrangement.Center
-        ) {
-            formFields()
-        }
+        formFields()
 
-        Box(
-            modifier = Modifier.fillMaxWidth(),
-            contentAlignment = Alignment.Center
-        ) {
-            actionButtons()
-        }
+        actionButtons()
     }
 }
