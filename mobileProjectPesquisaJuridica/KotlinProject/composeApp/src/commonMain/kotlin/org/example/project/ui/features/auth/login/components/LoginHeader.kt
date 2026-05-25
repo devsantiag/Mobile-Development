@@ -1,4 +1,4 @@
-package org.example.project.components.userAccount.login.desingInterface
+package org.example.project.ui.features.auth.login.components
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -19,8 +19,6 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-
-// Header
 @Composable
 fun TitleInterface() {
     Column(
@@ -56,7 +54,7 @@ fun RegistrationLinkStyled(
 
             withLink(
                 link = LinkAnnotation.Clickable(
-                    tag = "ScreenNavigation.Register.route",
+                    tag = "register_link",
                     styles = TextLinkStyles(
                         style = SpanStyle(
                             color = Color.White,

@@ -6,10 +6,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import org.example.project.screens.*
-import org.example.project.screens.home.HomeScreen
-import org.example.project.screens.recoverPassword.ForgotPasswordScreen
-import org.example.project.screens.registerAccount.UserRegisterFormsScreen
+import org.example.project.ui.features.auth.login.LoginScreen
+import org.example.project.ui.features.home.HomeScreen
+import org.example.project.ui.features.auth.forgotPassword.ForgotPasswordScreen
+import org.example.project.ui.features.auth.register.UserRegisterFormsScreen
 
 @Composable
 fun AppNavigation() {
@@ -21,42 +21,37 @@ fun AppNavigation() {
     MaterialTheme(
         colorScheme = mainThemeColors
     ) {
-//        Route identification
         NavHost(
             navController = navController,
-            startDestination = ScreenNavgation.Login.route
+            startDestination = ScreenNavigation.Login.route
         ) {
-            composable(ScreenNavgation.Login.route) {
-
+            composable(ScreenNavigation.Login.route) {
                 LoginScreen(
                     onNavigateToHome = {
-                        navController.navigate(ScreenNavgation.Home.route)
+                        navController.navigate(ScreenNavigation.Home.route)
                     },
-
                     onNavigateToForgotPassword = {
-                        navController.navigate(ScreenNavgation.ForgotPassword.route)
+                        navController.navigate(ScreenNavigation.ForgotPassword.route)
                     },
-
                     onOpenInterfaceRegisterNewUser = {
-                        navController.navigate(ScreenNavgation.Register.route)
+                        navController.navigate(ScreenNavigation.Register.route)
                     }
                 )
             }
 
-            composable(ScreenNavgation.Home.route) {
+            composable(ScreenNavigation.Home.route) {
                 HomeScreen(
                     onLogout = {
-                        navController.navigate(ScreenNavgation.Login.route)
+                        navController.navigate(ScreenNavigation.Login.route)
                     }
                 )
             }
 
-//            Parameter currently disabled
-            composable(ScreenNavgation.Register.route) {
+            composable(ScreenNavigation.Register.route) {
                 UserRegisterFormsScreen()
             }
 
-            composable(ScreenNavgation.ForgotPassword.route) {
+            composable(ScreenNavigation.ForgotPassword.route) {
                 ForgotPasswordScreen(
                     onNavigateBack = {
                         navController.popBackStack()

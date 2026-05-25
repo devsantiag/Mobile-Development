@@ -1,5 +1,0 @@
-// cases notes //
-
-- We need created of component for be a button link of recovery
-account and to remove of interface screen.
-

@@ -1,5 +1,4 @@
-
-package org.example.project.AppNavigation
+package org.example.project
 
 import androidx.compose.runtime.Composable
 import org.example.project.navigation.AppNavigation
