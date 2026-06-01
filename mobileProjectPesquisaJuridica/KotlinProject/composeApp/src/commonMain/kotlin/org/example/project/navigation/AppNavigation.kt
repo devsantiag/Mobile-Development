@@ -9,7 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import org.example.project.ui.features.auth.login.LoginScreen
 import org.example.project.ui.features.home.HomeScreen
 import org.example.project.ui.features.auth.forgotPassword.ForgotPasswordScreen
-import org.example.project.ui.features.auth.register.UserRegisterFormsScreen
+import org.example.project.ui.features.auth.register.UserRegisterScreen
 
 @Composable
 fun AppNavigation() {
@@ -23,7 +23,7 @@ fun AppNavigation() {
     ) {
         NavHost(
             navController = navController,
-            startDestination = ScreenNavigation.Register.route
+            startDestination = ScreenNavigation.Login.route
 
         ) {
             composable(ScreenNavigation.Login.route) {
@@ -49,7 +49,7 @@ fun AppNavigation() {
             }
 
             composable(ScreenNavigation.Register.route) {
-                UserRegisterFormsScreen()
+                UserRegisterScreen()
             }
 
             composable(ScreenNavigation.ForgotPassword.route) {

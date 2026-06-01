@@ -30,7 +30,7 @@ fun LoginScreen(
     var recoveryEmail by remember { mutableStateOf("") }
 
     Scaffold(
-        containerColor = Color(0xFF1A1A1A)
+        containerColor = Color(0xFF000000)
     ) { paddingValues ->
 
         Box(

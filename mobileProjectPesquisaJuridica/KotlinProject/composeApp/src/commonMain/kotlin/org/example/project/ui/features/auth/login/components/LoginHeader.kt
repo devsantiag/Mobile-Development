@@ -32,7 +32,7 @@ fun TitleInterface() {
             fontSize = 25.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Center
         )
     }
 }

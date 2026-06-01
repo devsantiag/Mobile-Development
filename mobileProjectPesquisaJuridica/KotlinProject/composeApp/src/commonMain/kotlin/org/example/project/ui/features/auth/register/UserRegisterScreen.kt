@@ -16,7 +16,7 @@ import org.example.project.ui.features.auth.register.components.UserInterfaceReg
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun UserRegisterFormsScreen() {
+fun UserRegisterScreen() {
 
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }

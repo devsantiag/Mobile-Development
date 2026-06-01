@@ -1,33 +1,62 @@
 package org.example.project.ui.features.auth.register.components
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.input.ImeAction
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import org.example.project.components.userAccount.register.button.RegisterButton
-import org.example.project.components.userAccount.register.pageDesignStructure.FormRegisterAccount
-import org.example.project.components.userAccount.register.pageDesignStructure.TitleInformation
+import androidx.compose.ui.unit.sp
 
 @Composable
 fun Header() {
     Column(
-        modifier = Modifier
-            .fillMaxWidth(),
         horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier.padding(16.dp)
     ) {
-        TitleInformation()
+        var keepMeSignedIn by remember { mutableStateOf(false) }
+
+        Text(
+            text = "New Account",
+            style = MaterialTheme.typography.headlineLarge,
+            fontWeight = FontWeight.Bold,
+            color = Color.White
+        )
+
+        Text(
+            text = "Sign in to access your account \nand get started.",
+            style = MaterialTheme.typography.bodyLarge,
+            color = Color.Gray,
+            textAlign = TextAlign.Center,
+            modifier = Modifier.padding(top = 4.dp)
+        )
+
+        Spacer(modifier = Modifier.height(20.dp))
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Checkbox(
+                checked = keepMeSignedIn,
+                onCheckedChange = {
+                    keepMeSignedIn = it
+                }
+            )
+
+            Text(
+                text = "Keep me signed in",
+                style = MaterialTheme.typography.bodyLarge,
+                color = Color.Gray,
+                textAlign = TextAlign.Center,
+            )
+        }
     }
 }
 
@@ -38,17 +67,33 @@ fun RegisterForm(
     onEmailChange: (String) -> Unit,
     onPasswordChange: (String) -> Unit
 ) {
+    Column {
+        OutlinedTextField(
+            value = email,
+            onValueChange = onEmailChange,
+            label = { Text("E-mail") },
+            singleLine = true,
+            placeholder = { Text("nome@exemplo.com") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Email,
+                imeAction = ImeAction.Next
+            ),
+            modifier = Modifier.fillMaxWidth()
+        )
 
-    Column(
-        modifier = Modifier
-            .fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-    ) {
-        FormRegisterAccount(
-            email = email,
-            password = password,
-            onEmailChange = onEmailChange,
-            onPasswordChange = onPasswordChange
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = password,
+            onValueChange = onPasswordChange,
+            label = { Text("Password") },
+            singleLine = true,
+            placeholder = { Text("Password") },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = KeyboardType.Password,
+                imeAction = ImeAction.Done
+            ),
+            modifier = Modifier.fillMaxWidth()
         )
     }
 }
@@ -58,12 +103,20 @@ fun SubmitButton(
     email: String,
     password: String
 ) {
-    RegisterButton(
+    Button(
         onClick = {
             println("Email: $email")
             println("Password: $password")
-        }
-    )
+        },
+        modifier = Modifier.fillMaxWidth().height(50.dp),
+        shape = MaterialTheme.shapes.medium,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color.White,
+            contentColor = Color.Black
+        )
+    ) {
+        Text("Register")
+    }
 }
 
 @Composable
@@ -75,20 +128,14 @@ fun UserInterfaceRegisterAccount(
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(20.dp),
-        verticalArrangement = Arrangement.Top,
+            .padding(24.dp),
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Spacer(modifier = Modifier.height(150.dp))
-
         header()
-
         Spacer(modifier = Modifier.height(24.dp))
-
         formFields()
-
         Spacer(modifier = Modifier.height(32.dp))
-
         actionButtons()
     }
 }
