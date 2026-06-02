@@ -1,7 +1,9 @@
 package org.example.project.ui.features.auth.login.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,14 +27,13 @@ fun TitleInterface() {
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
             text = "Sign in",
             color = Color.White,
-            fontSize = 25.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Center
+            fontSize = 32.sp,
+            fontWeight = FontWeight.SemiBold
         )
     }
 }
@@ -45,8 +46,9 @@ fun RegistrationLinkStyled(
         modifier = Modifier
             .fillMaxWidth()
             .padding(horizontal = 16.dp),
-        horizontalAlignment = Alignment.Start
-    ) {
+        horizontalAlignment = Alignment.CenterHorizontally,
+
+        ) {
         val annotatedString = buildAnnotatedString {
             withStyle(style = SpanStyle(color = Color(0xFFB3B3B3))) {
                 append("New User? ")
@@ -73,7 +75,7 @@ fun RegistrationLinkStyled(
             text = annotatedString,
             fontSize = 17.sp,
             modifier = Modifier.fillMaxWidth(),
-            textAlign = TextAlign.Start
+            textAlign = TextAlign.Center
         )
     }
 }

@@ -24,7 +24,6 @@ fun AppNavigation() {
         NavHost(
             navController = navController,
             startDestination = ScreenNavigation.Login.route
-
         ) {
             composable(ScreenNavigation.Login.route) {
                 LoginScreen(

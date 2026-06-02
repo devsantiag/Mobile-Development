@@ -10,5 +10,4 @@ import org.example.project.ui.features.auth.register.UserRegisterScreen
 fun AppPreview() {
     App()
 //    UserRegisterScreen()
-
 }
