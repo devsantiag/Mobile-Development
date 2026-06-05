@@ -11,6 +11,7 @@ import org.example.project.ui.features.auth.forgotPassword.components.AccountRec
 import org.example.project.ui.features.auth.forgotPassword.components.RecoveryContent
 import org.example.project.ui.features.auth.forgotPassword.components.ButtonLinkRecoveryAccount
 import org.example.project.ui.features.auth.login.components.LoginFormUser
+import org.example.project.ui.features.auth.login.components.Logo
 import org.example.project.ui.features.auth.login.components.RegistrationLinkStyled
 import org.example.project.ui.features.auth.login.components.TitleInterface
 
@@ -45,6 +46,10 @@ fun LoginScreen(
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
+                Logo()
+
+                Spacer(modifier = Modifier.height(16.dp))
+
                 TitleInterface()
 
                 RegistrationLinkStyled (

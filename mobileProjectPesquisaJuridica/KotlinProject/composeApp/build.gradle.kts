@@ -81,3 +81,8 @@ android {
 dependencies {
     debugImplementation(libs.compose.uiTooling)
 }
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "kotlinproject.composeapp.generated.resources"
+}
