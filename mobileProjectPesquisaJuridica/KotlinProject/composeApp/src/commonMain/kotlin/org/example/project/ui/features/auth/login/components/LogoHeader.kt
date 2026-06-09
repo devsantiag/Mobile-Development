@@ -9,6 +9,7 @@ import kotlinproject.composeapp.generated.resources.Res
 import kotlinproject.composeapp.generated.resources.mobile_logo_interface
 import org.jetbrains.compose.resources.painterResource
 
+// Logo Image
 @Composable
 fun Logo(modifier: Modifier = Modifier) {
     Image(
@@ -16,6 +17,6 @@ fun Logo(modifier: Modifier = Modifier) {
             resource = Res.drawable.mobile_logo_interface
         ),
         contentDescription = "Logo",
-        modifier = modifier.size(120.dp)
+        modifier = modifier.size(150.dp)
     )
 }

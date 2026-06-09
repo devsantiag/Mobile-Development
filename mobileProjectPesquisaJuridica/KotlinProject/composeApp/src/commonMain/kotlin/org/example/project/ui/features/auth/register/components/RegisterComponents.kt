@@ -12,7 +12,6 @@ import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 
 @Composable
 fun Header() {
@@ -37,9 +36,10 @@ fun Header() {
             modifier = Modifier.padding(top = 4.dp)
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         Row(
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.Center
         ) {
@@ -55,6 +55,7 @@ fun Header() {
                 style = MaterialTheme.typography.bodyLarge,
                 color = Color.Gray,
                 textAlign = TextAlign.Center,
+                modifier = Modifier.offset(x = (-7).dp)
             )
         }
     }

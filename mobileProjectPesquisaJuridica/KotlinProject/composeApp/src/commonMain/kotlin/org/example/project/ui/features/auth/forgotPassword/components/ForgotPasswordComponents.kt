@@ -10,6 +10,33 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
+// Main interface
+@Composable
+fun ButtonLinkRecoveryAccount(
+    onToAccesFormClick: () -> Unit
+) {
+    Column(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 3.dp)
+    ) {
+        TextButton(
+            onClick = {
+                onToAccesFormClick()
+            },
+            contentPadding = PaddingValues(0.dp)
+        ) {
+            Text(
+                text = "Forgot password",
+                color = Color(0xFFFFFFFF),
+                fontSize = 14.sp,
+                fontWeight = FontWeight.SemiBold
+            )
+        }
+    }
+}
+
+// Recover account information title
 @Composable
 fun AccountRecoveryHeader() {
     Column(
@@ -24,14 +51,15 @@ fun AccountRecoveryHeader() {
         )
         Text(
             text = "Recover access to your account",
-            color = Color(0xFF8E8E93),
+            color = Color(0xFFB8B8B8),
             fontSize = 15.sp,
             modifier = Modifier.padding(top = 10.dp)
         )
     }
 }
 
-@Composable  
+// Pop Up interface
+@Composable
 fun RecoveryContent(
     email: String,
     onEmailChange: (String) -> Unit,
@@ -61,31 +89,6 @@ fun RecoveryContent(
             )
         ) {
             Text("Send Reset Link")
-        }
-    }
-}
-
-@Composable
-fun ButtonLinkRecoveryAccount(
-    onToAccesFormClick: () -> Unit
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(horizontal = 16.dp)
-    ) {
-        TextButton(
-            onClick = {
-                onToAccesFormClick()
-            },
-            contentPadding = PaddingValues(0.dp)
-        ) {
-            Text(
-                text = "Forgot password",
-                color = Color(0xFFFFFFFF),
-                fontSize = 14.sp,
-                fontWeight = FontWeight.SemiBold
-            )
         }
     }
 }

@@ -42,13 +42,13 @@ fun LoginScreen(
             Column(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(horizontal = 24.dp),
+                    .padding(horizontal = 32.dp)
+                    .offset(y = (-50).dp),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Logo()
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Logo()
 
                 TitleInterface()
 
@@ -96,7 +96,7 @@ fun LoginScreen(
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .padding(horizontal = 24.dp)
+                            .padding(horizontal = 20.dp)
                             .padding(bottom = 40.dp)
                     ) {
 
