@@ -6,6 +6,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -37,6 +38,7 @@ fun LoginFormUser(
         keyboardOptions = KeyboardOptions(
             keyboardType = KeyboardType.Password
         ),
+        visualTransformation = PasswordVisualTransformation(),
         singleLine = true
     )
     Spacer(modifier = Modifier.height(5.dp))

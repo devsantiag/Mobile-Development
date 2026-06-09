@@ -7,7 +7,7 @@ import org.example.project.ui.features.auth.register.UserRegisterScreen
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun AppPreview() {
-//    App()
-    UserRegisterScreen()
+    App()
+//    UserRegisterScreen()
 
 }
